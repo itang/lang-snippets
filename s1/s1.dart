@@ -1,0 +1,1 @@
+void main() { print("banana".split("").where((c) => c == 'a').length); }

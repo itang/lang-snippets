@@ -1,0 +1,1 @@
+"banana" |> String.codepoints |> Enum.filter(&1 == "a") |> length |> IO.puts
