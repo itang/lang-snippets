@@ -1,22 +1,31 @@
 ## -一行代码统计字符串字母a出现的次数
 
-### s1.exs
+### Clojure
+
+    (reduce (fn [p e] (if (= e \a) (inc p) p)) 0 "banana")
+
+    (->> "banana" (filter (partial = \a)) count)
+
+### Scala
+
+    "banana".foldLeft(0){ (p, e) => if(e=='a') p+1 else p }
+
+    "banana".filter(_ == 'a').length
+
+    "banana".count{ case 'a' => true; case _ => false }
+    "banana".count{ _ == 'a'}
+
+### Dart
+
+    "banana".split("").fold(0, (p, e) => e=='a'? p+1 : p);
+
+    "banana".split("").where((c) => c == 'a').length);
+
+### Elixir
 
     "banana" |> String.codepoints |> Enum.filter(&1 == "a") |> length |> IO.puts
 
-### s1.scala
+### Ruby
 
-    println("banana".filter(_ == 'a').length)
-
-### s1.dart
-
-    void main() { print("banana".split("").where((c) => c == 'a').length); }
-
-### s1.clj
-
-    (->> "banana" (filter (partial = \a)) count println)
-
-### s1.rb
-
-    puts "banana".split("").select {|x| x == 'a'}.count
-    puts "banana".each_char.select {|x| x == 'a'}.length
+    "banana".split("").select {|x| x == 'a'}.count
+    "banana".each_char.select {|x| x == 'a'}.length
