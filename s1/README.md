@@ -23,9 +23,10 @@
 
 ### Elixir
 
-    "banana" |> String.codepoints |> Enum.filter(&1 == "a") |> length |> IO.puts
+    "banana" |> String.codepoints |> Enum.filter(&1 == "a") |> length
 
 ### Ruby
+    "banana".each_char.reduce(0){|p, e| e=='a'? p+1 : p}
 
     "banana".split("").select {|x| x == 'a'}.count
     "banana".each_char.select {|x| x == 'a'}.length
