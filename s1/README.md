@@ -3,6 +3,7 @@
 ### Clojure
 
     (reduce (fn [p e] (if (= e \a) (inc p) p)) 0 "banana")
+    (reduce #(condp = %2 \a (inc %1) %1) 0 "banana")
 
     (->> "banana" (filter (partial = \a)) count)
 
