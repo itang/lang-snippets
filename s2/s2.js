@@ -2,31 +2,31 @@ var sys = require('sys');
 
 function ofuscatedPassword(pass) {
     var ret = "";
-	  var plen = pass.length;
-	  if (plen < 3) {
-		    ret = _repeatStar(plen);
-	  } else {
-		    ret = pass[0] + _repeatStar(plen-2) + pass[plen-1];
-	  }
+    var plen = pass.length;
+    if (plen < 3) {
+        ret = _repeatStar(plen);
+    } else {
+        ret = pass[0] + _repeatStar(plen-2) + pass[plen-1];
+    }
 
-	  debug(ret);
-	  return ret;
+    debug(ret);
+    return ret;
 }
 
 function _repeatStar(times) {
-	  return _repeatStr("*", times)
+    return _repeatStr("*", times)
 }
 
 function _repeatStr(str, times) {
     var arr = [];
-	  for(var i= 0; i < times; i++) {
+    for(var i= 0; i < times; i++) {
         arr[i] = str
-	  }
-	  return arr.join("");
+    }
+    return arr.join("");
 }
 
 function debug(o) {
-	  sys.debug(o);
+    sys.debug(o);
 }
 
 function assert(t) {
