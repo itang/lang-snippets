@@ -42,3 +42,19 @@ Returns the password in obfuscated fashion which means everthing except the firs
 		case _ => "*" * pass.length
 	  }
 	}
+
+### Go
+
+    import (
+	    . "fmt"
+	    . "strings"
+    )
+
+    func OfuscatedPassword(pass string) string {
+	    plen := len(pass)
+	    if plen < 3 {
+		    return Repeat("*", plen)
+	    } else {
+		    return Sprintf("%c%v%c", pass[0], Repeat("*", plen-2), pass[plen-1])
+	    }
+    }
