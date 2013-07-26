@@ -30,10 +30,9 @@ Returns the password in obfuscated fashion which means everthing except the firs
 	def obfuscatedPassword1(pass: String) = {
 	  if (pass.length < 3)
 		"*" * pass.length
-	  else {
+	  else
 		pass.head + "*" * (pass.length - 2) + pass.last
-	  }
-	}
+    }
 
 	def obfuscatedPassword2(pass: String) = {
 	  val re1 = "(.)(.+)(.)".r
@@ -42,6 +41,11 @@ Returns the password in obfuscated fashion which means everthing except the firs
 		case _ => "*" * pass.length
 	  }
 	}
+
+    def obfuscatedPassword3(pass: String) = pass.length match{
+      case len if len < 3 => "*" * len
+      case len @ _ => pass.head + "*" * (len - 2) + pass.last
+    }
 
 ### Go
 
