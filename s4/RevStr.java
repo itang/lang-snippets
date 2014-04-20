@@ -79,6 +79,9 @@ public class RevStr {
 	}
 
 	private String listRevConcatAsString(final List<String> ws) {
+		if (ws.size() == 0) {
+			return ws.get(0);
+		}
 		final StringBuilder sb = new StringBuilder();
 		for (int i = ws.size() - 1; i >= 0; i--) {
 			sb.append(ws.get(i));
