@@ -47,14 +47,6 @@ public class RevStr {
 		return listRevConcatAsString(ws);
 	}
 
-	private String listRevConcatAsString(final List<String> ws) {
-		final StringBuilder sb = new StringBuilder();
-		for (int i = ws.size() - 1; i >= 0; i--) {
-			sb.append(ws.get(i));
-		}
-		return sb.toString();
-	}
-
 	public String rev2(/* @Nullable */final String s) {
 		if (s == null) {
 			return null;
@@ -84,6 +76,14 @@ public class RevStr {
 		}
 
 		return listRevConcatAsString(ws);
+	}
+
+	private String listRevConcatAsString(final List<String> ws) {
+		final StringBuilder sb = new StringBuilder();
+		for (int i = ws.size() - 1; i >= 0; i--) {
+			sb.append(ws.get(i));
+		}
+		return sb.toString();
 	}
 
 	private boolean isSame(char c, char n) {
